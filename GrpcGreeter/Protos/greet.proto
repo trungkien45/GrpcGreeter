@@ -1,0 +1,32 @@
+syntax = "proto3";
+option csharp_namespace = "GrpcGreeter.Protos";
+package greet;
+
+import "Protos/protobuf.proto";
+import "Protos/protobuf1.proto";
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc ABC(abc) returns (xyz);
+}
+
+// The greeting service definition.
+service Greeter3 {
+  // Sends a greeting
+  rpc SayHello (Hello3Request) returns (Hello3Reply);
+  rpc ABC(abc3) returns (xyz3);
+}
+service Greeter4 {
+    rpc DownloadFile(DownloadRequest) returns (stream DownloadResponse);
+    rpc UploadFile(stream DownloadResponse) returns (DownloadRequest);
+    rpc Stremming(stream DownloadResponse) returns (stream DownloadResponse);
+}
+message DownloadRequest {
+    string FileId = 1;
+}
+
+message DownloadResponse {
+    bytes FileChunk = 1;
+}

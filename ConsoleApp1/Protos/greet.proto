@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option csharp_namespace = "ConsoleApp1";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+    rpc ABC(abc) returns (xyz);
+}
+// The greeting service definition.
+service Greeter3 {
+  // Sends a greeting
+  rpc SayHello (HelloRequest3) returns (HelloReply3);
+  rpc ABC(abc3) returns (xyz3);
+}
+
+service Greeter4 {
+    rpc DownloadFile(DownloadRequest) returns (stream DownloadResponse);
+    rpc UploadFile(stream DownloadResponse) returns (DownloadRequest);
+    rpc Stremming(stream DownloadResponse) returns (stream DownloadResponse);
+}
+message DownloadRequest {
+    string FileId = 1;
+}
+
+message DownloadResponse {
+    bytes FileChunk = 1;
+}
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+message abc{
+	int32 a = 1;
+}
+message xyz{
+	int32 cc = 1;
+}
+// The request message containing the user's name.
+message HelloRequest3 {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply3 {
+  string message = 1;
+}
+message abc3{
+ 	repeated int32 a = 1;
+}
+message xyz3{
+	int32 cc = 1;
+}

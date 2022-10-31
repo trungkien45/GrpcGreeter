@@ -1,0 +1,23 @@
+syntax = "proto3";
+option csharp_namespace = "GrpcGreeter.Protos";
+package greet;
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+// The request message containing the user's name.
+message Hello3Request {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message Hello3Reply {
+  string message = 1;
+}
+

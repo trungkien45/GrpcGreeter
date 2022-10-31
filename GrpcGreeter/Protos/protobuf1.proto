@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter.Protos";
+package greet;
+
+message abc{
+	int32 a = 1;
+}
+message xyz{
+	int32 cc = 1;
+}
+message abc3{
+	repeated int32 a = 1;
+}
+message xyz3{
+	int32 cc = 1;
+}
