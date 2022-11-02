@@ -27,10 +27,9 @@ var rep3
 Console.WriteLine("Greeting: " + rep3.Cc);
 
 var client4 = new Greeter4.Greeter4Client(channel);
-var cts = new CancellationToken();
 DownloadRequest downloadRequest = new DownloadRequest();
 downloadRequest.FileId = "a";
-var response = client4.DownloadFile(downloadRequest, cancellationToken: cts);
+var response = client4.DownloadFile(downloadRequest);
 Stream fs = File.OpenWrite(@"abc.jpg");
 await foreach (var chunkMsg in response.ResponseStream.ReadAllAsync().ConfigureAwait(false))
 {
